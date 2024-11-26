@@ -7,9 +7,12 @@ import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 public class CartTest {
     public static void main(String[] args) {
         Cart cart = new Cart();
-        DigitalVideoDisc d1 = new DigitalVideoDisc("Whisper of the Heart", "Animation", "Yoshifumi Kondo", 111, 8.3f);
-        DigitalVideoDisc d2 = new DigitalVideoDisc("Contratiempo", "Crime", "Oriol Paulo", 106, 30.0f);
-        DigitalVideoDisc d3 = new DigitalVideoDisc("Scorpion", "Crime", 25.59f);
+
+        DigitalVideoDisc d1 = new DigitalVideoDisc("The Lion King",
+				"Animation", "Roger Allers", 87, 19.95f);
+        DigitalVideoDisc d2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+        DigitalVideoDisc d3 = new DigitalVideoDisc("Aladin",
+				"Animation", 18.99f);
         DigitalVideoDisc[] dvdList = {d1, d2, d3};
         cart.addDigitalVideoDisc(dvdList);
         cart.print();
