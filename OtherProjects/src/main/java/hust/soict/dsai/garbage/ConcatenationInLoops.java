@@ -1,4 +1,3 @@
-//Nguyen Trung Kien 20226110
 package hust.soict.dsai.garbage;
 import java.util.Random;
 public class ConcatenationInLoops {
