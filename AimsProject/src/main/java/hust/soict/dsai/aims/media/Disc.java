@@ -1,3 +1,4 @@
+// Nguyen Trung Kien 20226110
 package hust.soict.dsai.aims.media;
 
 public class Disc extends Media{
@@ -10,9 +11,6 @@ public class Disc extends Media{
 
     public String getDirector() {
         return director;
-    }
-    public Disc(){
-
     }
 
     public Disc(String title, String category, float cost) {

@@ -1,3 +1,4 @@
+// Nguyen Trung Kien 20226110
 package hust.soict.dsai.aims;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.cart.Cart;
@@ -20,18 +21,6 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3");
     }
-    public static void storeMenu() {
-        System.out.println("Options: ");
-        System.out.println("----------------------------------");
-        System.out.println("1. See a media’s details");
-        System.out.println("2. Add a media to cart");
-        System.out.println("3. Play a media");
-        System.out.println("4. See current cart");
-        System.out.println("0. Back");
-        System.out.println("----------------------------------");
-        System.out.println("Please choose a number: 0-1-2-3-4");
-    }
-
     public static void cartMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -43,6 +32,18 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
+    }
+
+    public static void storeMenu() {
+        System.out.println("Options: ");
+        System.out.println("----------------------------------");
+        System.out.println("1. See a media’s details");
+        System.out.println("2. Add a media to cart");
+        System.out.println("3. Play a media");
+        System.out.println("4. See current cart");
+        System.out.println("0. Back");
+        System.out.println("----------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3-4");
     }
 
     public static int getIntegerInput(String text) {
@@ -62,12 +63,6 @@ public class Aims {
         }
         return result;
     }
-    public static String getStringInput(String text) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(text);
-        return scanner.nextLine();
-    }
-
     public static void seeMediaDetails() {
         String title = getStringInput("Enter title: ");
         Media media = mainStore.searchByTitle(title);
@@ -78,6 +73,14 @@ public class Aims {
             System.out.println("Media not found.");
         }
     }
+    
+    public static String getStringInput(String text) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(text);
+        return scanner.nextLine();
+    }
+
+
     public static void mediaDetailsMenu(Media media) {
         while (true) {
             System.out.println("Options: ");
@@ -182,7 +185,7 @@ public class Aims {
     }
     public static void viewStore() {
         while (true) {
-            mainStore.print();  // Method to display all items in the store
+            mainStore.print();  
             storeMenu();
             int choice = getIntegerInput("");
             switch (choice) {
@@ -223,9 +226,9 @@ public class Aims {
         }
     }
     public static void main(String[] args) {
-        CompactDisc cd = new CompactDisc("Thriller", "Music", 51.5f);
-        DigitalVideoDisc dvd = new DigitalVideoDisc("Contratiempo", "Crime", "Oriol Paulo", 106, 30.0f);
-        Book book = new Book(5, "Harry Potter", "Fantasy", 11.4f,  new ArrayList<>(Arrays.asList("J.K Rowling")));
+        CompactDisc cd = new CompactDisc("Perfect", "Music", 51.5f);
+        DigitalVideoDisc dvd = new DigitalVideoDisc("Kien hoc IT", "Crime", "Trung Kien", 106, 30.0f);
+        Book book = new Book(5, "The Old Man and the Sea ", "Novel", 11.4f,  new ArrayList<>(Arrays.asList("Ernest Hemingway")));
         mainStore.addMedia(cd);
         mainStore.addMedia(dvd);
         mainStore.addMedia(book);

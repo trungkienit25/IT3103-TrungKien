@@ -1,7 +1,6 @@
+// Nguyen Trung Kien 20226110
 package hust.soict.dsai.aims.media;
-
 import java.util.Comparator;
-
 public abstract class Media {
     private int id;
     private String title;
@@ -21,30 +20,41 @@ public abstract class Media {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getCategory() {
-        return category;
-    }
-    public void setCategory(String category) {
-        this.category = category;
-    }
     public float getCost() {
         return cost;
     }
     public void setCost(float cost) {
         this.cost = cost;
     }
-    public Media() {}
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public Media(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
 
-    public boolean isMatch(String searchStr) {
+    @Override
+    public boolean equals(Object object_kien){
+        if (this == object_kien){
+            return true;
+        } if (getClass() != object_kien.getClass() || object_kien == null ) {
+            return false;
+        }
+        Media other = (Media) object_kien;
+        return this.title.equals(other.title);
+    }
+    
+    public boolean isMatch(String search_Str) {
         boolean matched = false;
-        String[] searchArr = searchStr.split(" ", 0);
+        String[] searchArray = search_Str.split(" ", 0);
         String title = this.getTitle();
-        for (String word: searchArr) {
+        for (String word: searchArray) {
             String lowerCaseTitle = title.toLowerCase();
             int index = lowerCaseTitle.indexOf(word.toLowerCase());
             if (index != -1) {
@@ -53,15 +63,5 @@ public abstract class Media {
             }
         }
         return matched;
-    }
-    @Override
-    public boolean equals(Object obj){
-        if (this == obj){
-            return true;
-        } if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Media other = (Media) obj;
-        return this.title.equals(other.title);
     }
 }

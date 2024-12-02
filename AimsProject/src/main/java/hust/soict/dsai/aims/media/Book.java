@@ -1,3 +1,4 @@
+// Nguyen Trung Kien 20226110
 package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
@@ -15,29 +16,31 @@ public class Book extends Media{
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
             authors.add(authorName);
-            System.out.println("Added " + authorName + " to the author list");
+            System.out.println("We have added " + authorName + " to the author list!!");
         } else {
-            System.out.println(authorName + " is already in the author list");
+            System.out.println(authorName + " is already in the author list!!");
         }
     }
 
     public void removeAuthor(String authorName){
         if (authors.contains(authorName)){
             authors.remove(authorName);
-            System.out.println("Removed " + authorName + " from the author list");
+            System.out.println("We have removed " + authorName + " from the author list!!");
         } else {
-            System.out.println(authorName + "is not in the author list");
+            System.out.println(authorName + "is not in the author list :<");
         }
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "Authors=" + authors + '\'' +
-                ", ID=" + getId() +
-                ", Title='" + getTitle() + '\'' +
-                ", Category='" + getCategory() + '\'' +
-                ", Cost=" + getCost() +
+                "Authors: " + authors + '\'' +
+                ", ID: " + getId() +
+                ", Title: '" + getTitle() + '\'' +
+                ", Category: '" + getCategory() + '\'' +
+                ", Cost: " + getCost() +
                 "}\n";
     }
 }
+
+
